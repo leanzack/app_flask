@@ -6,3 +6,8 @@ app = Flask(__name__)
 def index():
     return render_template('hello.html')
 
+
+@app.route("/greet")
+def greet():
+    return render_template("greet.html", name=request.args.get("name", "world"))
+
